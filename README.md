@@ -1,16 +1,58 @@
-# React + Vite
+# 📱 App Store Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive App Store-like web application where users can explore apps, view detailed information, install/uninstall apps, and track their activity through a dashboard with visual analytics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Site
 
-## React Compiler
+🔗 https://heroio-web.netlify.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Description
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is designed to simulate a real-world app marketplace. Users can browse through a collection of apps, check ratings and descriptions, and manage installed apps easily. It also includes a dashboard to visualize installed vs remaining apps using charts.
+
+---
+
+## 🛠️ Technologies Used
+
+* ⚛️ React.js
+* 🎨 Tailwind CSS
+* 📊 Recharts
+* 🔔 React Toastify
+* 📁 JSON (Local Data)
+
+---
+
+## 🚀 Key Features
+
+### 1️⃣ App Install & Uninstall System
+
+* Users can install apps with one click
+* Installed apps can be removed anytime
+* Toast notifications provide instant feedback
+
+### 2️⃣ Dynamic App Details Page
+
+* Each app has its own details page
+* Shows description, rating chart, and install option
+
+### 3️⃣ Interactive Dashboard
+
+* Visual representation of installed apps
+* Pie chart using Recharts
+* Tracks user activity in real-time
+
+---
+
+## 👨‍💻 Author
+
+**Fardin**
+
+---
+
+## ⭐ Support
+
+If you like this project, don’t forget to give it a ⭐ on GitHub!
