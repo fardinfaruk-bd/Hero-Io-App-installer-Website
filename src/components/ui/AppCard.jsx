@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { MdOutlineFileDownload } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const AppCard = ({app}) => {
     return (
-        <div className="card bg-base-100 shadow-sm p-4">
+        <Link to={`/apps/${app.id}`} className="card bg-base-100 shadow-sm p-4">
             <figure className='bg-gray-100 py-10'>
                 <img
                     src={app.image}
@@ -24,7 +25,7 @@ const AppCard = ({app}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
