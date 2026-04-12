@@ -5,7 +5,7 @@ const EmptyInstallSection = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='min-h-screen container mx-auto flex justify-center items-center'>
+        <div className='min-h-screen w-[90%] md:container mx-auto flex justify-center items-center text-center'>
             <div className='flex flex-col justify-center items-center gap-8'>
                 <img src={EmptyAppImg} alt="" />
                 <div>

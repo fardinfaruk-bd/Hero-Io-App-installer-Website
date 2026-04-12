@@ -28,7 +28,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <hr className='text-gray-500'/>
-                <p className='text-[#FAFAFA]'>Copyright © 2025 - All right reserved</p>
+                <p className='text-[#627382]'>Copyright © 2025 - All right reserved</p>
             </div>
         </div>
     );
