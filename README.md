@@ -20,9 +20,10 @@ This project is designed to simulate a real-world app marketplace. Users can bro
 
 * ⚛️ React.js
 * 🎨 Tailwind CSS
+* 🪄 Daisy Ui
 * 📊 Recharts
 * 🔔 React Toastify
-* 📁 JSON (Local Data)
+* ❄️ React Icons
 
 ---
 
