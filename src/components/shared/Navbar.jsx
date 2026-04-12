@@ -20,6 +20,7 @@ const Navbar = () => {
                                 <li><MyNavLink to={"/"} className={"border border-purple-300"}>Home</MyNavLink ></li>
                                 <li><MyNavLink to={"/apps"} className={"border border-purple-300"}>App</MyNavLink ></li>
                                 <li><MyNavLink to={"/installedApps"} className={"border border-purple-300"}>Installation</MyNavLink ></li>
+                                <li><MyNavLink to={"/dashboard"}>Dashboard</MyNavLink ></li>
                             </ul>
                         </ul>
                     </div>
@@ -36,7 +37,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className='btn bg-linear-to-r from-[#9F62F2] to-[#632EE3] text-white'> <FaGithub />Contribute</button>
+                    <Link to="https://github.com/fardinfaruk-bd">
+                        <button className='btn bg-linear-to-r from-[#9F62F2] to-[#632EE3] text-white'> <FaGithub />Contribute</button>
+                    </Link>
                 </div>
             </div>
         </nav>

@@ -26,14 +26,14 @@ const InstallApps = () => {
             <div className='space-y-10 mb-10'>
                 {installedApps.map((app, index) => {
                         return <div key={index} >
-                            <div className=' bg-gray-100 flex justify-between items-center p-5 rounded-lg'>
-                                <div className="flex items-center gap-5">
+                            <div className=' bg-gray-100 flex-col flex md:flex-row justify-between items-center p-5 rounded-lg space-y-6'>
+                                <div className="flex-col  flex md:flex-row items-center gap-5">
                                     <figure className='bg-white p-3 rounded-lg'>
                                         <img src={app.image} alt="" className='w-30 rounded-lg' />
                                     </figure>
-                                    <div className='space-y-5'>
+                                    <div className='space-y-5 text-center'>
                                         <h3 className='text-xl font-medium'>{app.title}</h3>
-                                        <div className='flex gap-10'>
+                                        <div className='gap-2 flex md:gap-10'>
                                             <div className='flex items-center gap-2 text-[#00D390]'>
                                                 <img src={DownloadImage} className='w-4 h-4' alt="" />
                                                 <span>{app.downloads}</span>
