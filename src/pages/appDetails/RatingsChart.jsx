@@ -17,8 +17,8 @@ const RatingsChart = ({expectedApp}) => {
       <ResponsiveContainer>
         <BarChart
           data={data}
-          layout="vertical"   // 🔥 IMPORTANT (horizontal bar বানানোর জন্য)
-          margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
+          layout="vertical" 
+          margin={{ top: 10, right: 5, left: 5, bottom: 10}}
         >
           <XAxis type="number" />
           <YAxis type="category" dataKey="name" />

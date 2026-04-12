@@ -5,6 +5,7 @@ import App from "../pages/apps/App";
 import InstallApps from "../pages/installApps/InstallApps";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AppDetails from "../pages/appDetails/AppDetails";
+import Dashboard from "../pages/dashboard/Dashboard";
 
 export const router = createBrowserRouter( 
   [
@@ -30,7 +31,7 @@ export const router = createBrowserRouter(
         },
         {
           path: '/dashboard',
-          Component: InstallApps,
+          Component: Dashboard,
         }
       ],
       errorElement: <ErrorPage />,

@@ -33,7 +33,7 @@ const AppDetails = () => {
     }
 
     return (
-        <div className='container mx-auto space-y-10 pb-20'>
+        <div className='w-[90%] sm:container mx-auto space-y-10 pb-20'>
             <div className='flex-col text-center flex md:flex-row gap-10 md:text-left justify-center items-center border-b border-gray-300 pb-5'>
 
                 <div className='w-100 p-10 bg-gray-200'>
@@ -45,7 +45,7 @@ const AppDetails = () => {
                         <p className='text-[#627382]'>Develop By <span className='bg-linear-to-r from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent font-bold'>{expectedApp.companyName}</span></p>
                     </div>
                     <hr className='text-gray-300' />
-                    <div className='flex gap-10 justify-center md:justify-start'>
+                    <div className='flex-col flex md:flex-row gap-10 justify-center md:justify-start'>
                         <div className='flex flex-col items-center'>
                             <img src={DownloadImg} className='w-8' alt="" />
                             <p className='text-[#627382]'>Downloads</p>
@@ -72,7 +72,7 @@ const AppDetails = () => {
             <hr className='text-gray-300' />
             <div className='min-h-[30vh] space-y-10'>
                 <h3 className='font-bold text-3xl text-[#001931]'>Description</h3>
-                <p className='text-[#627382] px-10'>{expectedApp.description}</p>
+                <p className='text-[#627382] md:px-10'>{expectedApp.description}</p>
             </div>
 
         </div>
