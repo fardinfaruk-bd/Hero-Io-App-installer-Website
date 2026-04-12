@@ -7,11 +7,12 @@ import ReviewImg from "../../assets/images/icon-review.png"
 import { HashLoader } from 'react-spinners';
 import { InstallAppsContext } from '../../context/InstallAppsContext';
 import { toast } from 'react-toastify';
+import RatingsChart from './RatingsChart';
 
 const AppDetails = () => {
     const { id } = useParams();
 
-    const {installedApps, setInstalledApps} = useContext(InstallAppsContext);
+    const { installedApps, setInstalledApps } = useContext(InstallAppsContext);
 
     const { apps, loading } = useApps();
     const [isInstalled, setIsInstalled] = useState(false);
@@ -19,7 +20,7 @@ const AppDetails = () => {
     const expectedApp = apps.find(app => app.id == id);
 
     const handleInstall = () => {
-        const newInstalled = [...installedApps, expectedApp ];
+        const newInstalled = [...installedApps, expectedApp];
         toast.success(`${expectedApp.title} Installed Successfully`);
         setInstalledApps(newInstalled);
         setIsInstalled(true);
@@ -27,48 +28,52 @@ const AppDetails = () => {
     }
 
 
-    console.log(installedApps, "Installed App");
-
     if (loading) {
         return <HashLoader className='mx-auto' color='#9F62F2' />;
     }
 
     return (
-        <div className='container mx-auto'>
-            <div className='flex gap-10 justify-center items-center'>
+        <div className='container mx-auto space-y-10 pb-20'>
+            <div className='flex-col text-center flex md:flex-row gap-10 md:text-left justify-center items-center border-b border-gray-300 pb-5'>
 
                 <div className='w-100 p-10 bg-gray-200'>
                     <img src={expectedApp.image} className='rounded-lg' alt="" />
                 </div>
                 <div className='w-full space-y-5'>
                     <div>
-                    <h1 className="font-bold text-4xl">{expectedApp.title}</h1>
-                    <p className='text-[#627382]'>Develop By <span className='bg-linear-to-r from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent font-bold'>{expectedApp.companyName}</span></p>
+                        <h1 className="font-bold text-4xl">{expectedApp.title}</h1>
+                        <p className='text-[#627382]'>Develop By <span className='bg-linear-to-r from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent font-bold'>{expectedApp.companyName}</span></p>
                     </div>
-                    <hr className='text-gray-300'/>
-                    <div className='flex gap-10'>
+                    <hr className='text-gray-300' />
+                    <div className='flex gap-10 justify-center md:justify-start'>
                         <div className='flex flex-col items-center'>
                             <img src={DownloadImg} className='w-8' alt="" />
                             <p className='text-[#627382]'>Downloads</p>
-                            <h2 className='font-bold text-[40px]'>{expectedApp.downloads}</h2>
+                            <h2 className='font-bold text-3xl md:text-[40px]'>{expectedApp.downloads}</h2>
                         </div>
                         <div className='flex flex-col items-center'>
                             <img src={RatingImg} className='w-8' alt="" />
                             <p className='text-[#627382]'>Average Ratings</p>
-                            <h2 className='font-bold text-[40px]'>{expectedApp.ratingAvg}</h2>
+                            <h2 className='font-bold text-3xl md:text-[40px]'>{expectedApp.ratingAvg}</h2>
                         </div>
                         <div className='flex flex-col items-center'>
                             <img src={ReviewImg} className='w-8' alt="" />
                             <p className='text-[#627382]'>Downloads</p>
-                            <h2 className='font-bold text-[40px]'>{expectedApp.reviews}</h2>
+                            <h2 className='font-bold text-3xl md:text-[40px]'>{expectedApp.reviews}</h2>
                         </div>
                     </div>
-                    <button disabled={isInstalled}  className='btn btn-success text-white' onClick={handleInstall}>Install Now({expectedApp.size} MB)</button>
+                    <button disabled={isInstalled} className='btn btn-success text-white' onClick={handleInstall}>Install Now({expectedApp.size} MB)</button>
                 </div>
 
 
             </div>
 
+            <RatingsChart expectedApp={expectedApp} />
+            <hr className='text-gray-300' />
+            <div className='min-h-[30vh] space-y-10'>
+                <h3 className='font-bold text-3xl text-[#001931]'>Description</h3>
+                <p className='text-[#627382] px-10'>{expectedApp.description}</p>
+            </div>
 
         </div>
     );

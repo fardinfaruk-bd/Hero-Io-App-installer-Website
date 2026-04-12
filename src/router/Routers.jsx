@@ -27,6 +27,10 @@ export const router = createBrowserRouter(
         {
           path: '/installedApps',
           Component: InstallApps,
+        },
+        {
+          path: '/dashboard',
+          Component: InstallApps,
         }
       ],
       errorElement: <ErrorPage />,

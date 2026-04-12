@@ -3,6 +3,7 @@ import { InstallAppsContext } from '../../context/InstallAppsContext';
 import DownloadImage from '../../assets/images/icon-downloads.png'
 import RatingImage from '../../assets/images/icon-ratings.png'
 import { toast } from 'react-toastify';
+import EmptyInstallSection from './EmptyInstallSection';
 
 const InstallApps = () => {
 
@@ -13,6 +14,9 @@ const InstallApps = () => {
         setInstalledApps(newInstalled);
         toast.warning(`${app.title} Uninstalled Successfully`);
     }
+
+    if(installedApps.length === 0) return <EmptyInstallSection />
+
     return (
         <div className='container mx-auto p-10 space-y-10'>
             <div className='text-center space-y-3'>
@@ -20,8 +24,7 @@ const InstallApps = () => {
                 <p className=' text-[#627382]'>Explore All Trending Apps on the Market developed by us</p>
             </div>
             <div className='space-y-10 mb-10'>
-                {
-                    installedApps.map((app, index) => {
+                {installedApps.map((app, index) => {
                         return <div key={index} >
                             <div className=' bg-gray-100 flex justify-between items-center p-5 rounded-lg'>
                                 <div className="flex items-center gap-5">
