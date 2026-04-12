@@ -1,4 +1,4 @@
-# 📱 App Store Web App
+# 📱 Hero Io || App Store Web App
 
 A modern and interactive App Store-like web application where users can explore apps, view detailed information, install/uninstall apps, and track their activity through a dashboard with visual analytics.
 
