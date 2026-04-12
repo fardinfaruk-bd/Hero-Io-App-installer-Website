@@ -2,11 +2,17 @@ import React, { useContext } from 'react';
 import { InstallAppsContext } from '../../context/InstallAppsContext';
 import DownloadImage from '../../assets/images/icon-downloads.png'
 import RatingImage from '../../assets/images/icon-ratings.png'
+import { toast } from 'react-toastify';
 
 const InstallApps = () => {
 
     const { installedApps, setInstalledApps } = useContext(InstallAppsContext);
 
+    const handleUninstall = (app) => {
+        const newInstalled = installedApps.filter(iApp => iApp.id !== app.id);
+        setInstalledApps(newInstalled);
+        toast.warning(`${app.title} Uninstalled Successfully`);
+    }
     return (
         <div className='container mx-auto p-10 space-y-10'>
             <div className='text-center space-y-3'>
@@ -39,7 +45,7 @@ const InstallApps = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button className='btn btn-error text-white'>Uninstall</button>
+                                <button className='btn btn-error text-white' onClick={() => handleUninstall(app)}>Uninstall</button>
                             </div>
                         </div>
                     })

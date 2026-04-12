@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import useApps from '../../hooks/useApps';
 import DownloadImg from "../../assets/images/icon-downloads.png"
@@ -14,12 +14,15 @@ const AppDetails = () => {
     const {installedApps, setInstalledApps} = useContext(InstallAppsContext);
 
     const { apps, loading } = useApps();
+    const [isInstalled, setIsInstalled] = useState(false);
 
     const expectedApp = apps.find(app => app.id == id);
 
-    const handleInstall = (expectedApp) => {
+    const handleInstall = () => {
         const newInstalled = [...installedApps, expectedApp ];
+        toast.success(`${expectedApp.title} Installed Successfully`);
         setInstalledApps(newInstalled);
+        setIsInstalled(true);
 
     }
 
@@ -60,7 +63,7 @@ const AppDetails = () => {
                             <h2 className='font-bold text-[40px]'>{expectedApp.reviews}</h2>
                         </div>
                     </div>
-                    <button className='btn btn-success text-white' onClick={() => handleInstall(expectedApp)}>Install Now({expectedApp.size} MB)</button>
+                    <button disabled={isInstalled}  className='btn btn-success text-white' onClick={handleInstall}>Install Now({expectedApp.size} MB)</button>
                 </div>
 
 
